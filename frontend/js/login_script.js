@@ -1,9 +1,11 @@
 //Selecting all the elements
 
-const phoneNumElem = document.getElementById("");
-const pwdElem = document.getElementById("");
+const phoneNumElem = document.getElementById("mobNumber");
+const pwdElem = document.getElementById("pwd");
 
-const loginBtn = document.getElementById("");
+//! Include mail address in the logic of the code
+const mailElement = document.getElementById ('emailAddress')
+const loginBtn = document.getElementById("logInBtn");
 
 //check if guard is registered or not
 async function isGuardRegistered(phoneNum) {
@@ -23,7 +25,7 @@ async function isGuardRegistered(phoneNum) {
 
 //Does the login (or rejects if not registered)
 loginBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+
 
   //Checks if the input field is empty
   if (!phoneNumElem.value.trim()) {
