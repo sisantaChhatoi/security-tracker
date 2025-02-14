@@ -53,6 +53,42 @@
         </div>
     </div>
 
+    <!-- Emergency Section -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="dashboard-card">
+                <h4 class="text-center">🚨 Emergency Services</h4>
+                <hr>
+                <div class="d-flex justify-content-around">
+                    <button class="btn btn-danger">🚑 Call Ambulance</button>
+                    <button class="btn btn-warning">🔥 Report Fire</button>
+                    <button class="btn btn-dark">🔒 Report Theft</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Guest Pre-registration Section -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <div class="dashboard-card">
+                <h4 class="text-center">🛬 Guest Pre-Registration</h4>
+                <hr>
+                <form>
+                    <div class="mb-3">
+                        <label for="guestName" class="form-label">Guest Name</label>
+                        <input type="text" class="form-control" id="guestName" placeholder="Enter guest name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="guestTime" class="form-label">Expected Arrival Time</label>
+                        <input type="datetime-local" class="form-control" id="guestTime">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- Guard Details Modal -->
     <div class="modal fade" id="guardDetailsModal" tabindex="-1" aria-labelledby="guardDetailsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -71,7 +107,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 <script>
