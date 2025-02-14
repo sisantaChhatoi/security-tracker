@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ResidentsConfig(AppConfig):
+class GuardConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'residents'
+    name = 'guard'

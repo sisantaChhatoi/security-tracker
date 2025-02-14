@@ -40,15 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'rest_framework_simplejwt',
-    'assignments',
-    'attendance',
-    'authentication',
-    'incident_reporting',
-    'residents',
-    'tracking',
-    'performance',
-    'guards',
-    'verification'
+    'guard'
+
 
 ]
 
