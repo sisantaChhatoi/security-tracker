@@ -11,26 +11,34 @@ const ageElem = document.getElementById("");
 
 const registerBtn = document.getElementById("");
 
+//Below is related to bcrypt
+  
+
+const saltRounds = 10; 
+  
+
+
 //Guard class definition
 class Guard {
-  constructor(
-    firstName,
-    lastName,
-    phoneNum,
-    pwd,
-    confirm_pwd,
-    email,
-    address,
-    age
-  ) {
+  constructor(firstName, lastName, phoneNum, pwd, email, address, age) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.phoneNum = phoneNum;
     this.pwd = pwd;
-    this.confirm_pwd = confirm_pwd;
     this.email = email;
     this.address = address;
     this.age = age;
+  }
+}
+
+//This returns an encrypted password
+async function encryptPassword(password) {
+  try {
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await bcrypt.hash(password, salt);
+    return hash;
+  } catch (error) {
+    console.error("Error hashing password:", error);
   }
 }
 
@@ -50,6 +58,7 @@ async function isGuardRegistered(phoneNum) {
   }
 }
 
+//Adding event to the submit button
 registerBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
@@ -59,7 +68,6 @@ registerBtn.addEventListener("click", (e) => {
     lastNameElem.value,
     phoneNumElem.value,
     pwdElem.value,
-    confirm_pwdElem.value,
     emailElem.value,
     addressElem.value,
     ageElem.value
@@ -76,7 +84,6 @@ registerBtn.addEventListener("click", (e) => {
         lastNameElem.value &&
         phoneNumElem.value &&
         pwdElem.value &&
-        confirm_pwdElem.value &&
         addressElem.value &&
         ageElem.value
       )
@@ -84,8 +91,17 @@ registerBtn.addEventListener("click", (e) => {
       alert("Kindly fill the form!");
       return;
     } else if (!guardRegister) {
-      sendData();
-      alert("Registeration successful!");
+      //checks if both passwords are equal
+      if (pwdElem.value == confirm_pwdElem.value) {
+        encryptPassword(confirm_pwdElem.value).then((response) => {
+          newGuard.pwd = response; //this updates the pwd with encrypted pwd
+          sendData();
+          alert("Registeration successful!");
+        });
+      } else {
+        alert("Kindly match the password!");
+        return;
+      }
     } else {
       alert("You are already registered... Kindly login!");
       return;
