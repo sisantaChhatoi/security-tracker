@@ -11,12 +11,8 @@ const ageElem = document.getElementById("");
 
 const registerBtn = document.getElementById("");
 
-//Below is related to bcrypt
-  
-
-const saltRounds = 10; 
-  
-
+//Below is the number of salts for bcrypt
+const saltRounds = 10;
 
 //Guard class definition
 class Guard {
