@@ -1,3 +1,5 @@
+//testing encrypting password using bcrypt
+
 const bcrypt = require('bcryptjs');
 
 const saltRounds = 10; // Recommended: 10-12
