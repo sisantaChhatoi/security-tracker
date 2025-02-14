@@ -9,7 +9,7 @@ const emailElem = document.getElementById("mail");
 const addressElem = document.getElementById("address");
 const ageElem = document.getElementById("age");
 
-const registerBtn = document.getElementById("");
+const registerBtn = document.getElementById("registerBtn");
 
 //Below is the number of salts for bcrypt
 const saltRounds = 10;
@@ -89,9 +89,11 @@ registerBtn.addEventListener("click", (e) => {
     } else if (!guardRegister) {
       //checks if both passwords are equal
       if (pwdElem.value == confirm_pwdElem.value) {
+        console.log("Succesfully registered!");
         encryptPassword(confirm_pwdElem.value).then((response) => {
           newGuard.pwd = response; //this updates the pwd with encrypted pwd
           sendData();
+          window.location.href = "login.html"
           alert("Registeration successful!");
         });
       } else {

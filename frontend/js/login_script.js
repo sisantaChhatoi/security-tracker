@@ -25,6 +25,8 @@ async function isGuardRegistered(phoneNum) {
 
 //Does the login (or rejects if not registered)
 loginBtn.addEventListener("click", (e) => {
+
+  e.preventDefault()
   //Checks if the input field is empty
   if (!phoneNumElem.value.trim()) {
     return;
@@ -41,7 +43,7 @@ loginBtn.addEventListener("click", (e) => {
       localStorage.setItem("token", phoneNumElem.value);
 
       //! Add guard dashboard link
-      window.location.href = "";
+      window.location.href = "guard_dashboard.html";
     }
   });
 });
