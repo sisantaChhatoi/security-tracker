@@ -104,7 +104,7 @@ registerBtn.addEventListener("click", (e) => {
     }
   });
 
-  //sending the data to backend using phoneNum
+  //sending the data to backend
   async function sendData() {
     try {
       //! Put url of backend here
