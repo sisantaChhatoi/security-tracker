@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS guards (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    phone_num VARCHAR(15) NOT NULL UNIQUE,
+    pwd VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    address TEXT NOT NULL,
+    age INT NOT NULL
+);
+
+INSERT INTO guards (first_name, last_name, phone_num, pwd, email, address, age) VALUES
+('John', 'Doe', '9876543210', '$2b$10$X9m9l8Y4z5G/W6gGh8XjKeX3mHLdG/G9U/vI/fyMwUVu1Hp6HjWOS', 'john.doe@example.com', '123 Main St, New York, NY', 35),
+('Alice', 'Smith', '8765432109', '$2b$10$8zS2D6sTfTRZyydHRJfLyOKj1Bt4Lox1sOb0rbZvG3AAsSzExFn8m', 'alice.smith@example.com', '456 Oak St, Los Angeles, CA', 40),
+('Michael', 'Brown', '7654321098', '$2b$10$7HrIjLJjCuoJgfDS2XpFKeMLbS5BfMfmhBdI7uFh7Gpm.eTVZ5z82', 'michael.brown@example.com', '789 Pine St, Chicago, IL', 50),
+('Sophia', 'Wilson', '6543210987', '$2b$10$p5Xq.2O7uUo9AKRkDk1z2.GFVUGc9FS0U9uMaO1uBWqz1Q0xV49UO', 'sophia.wilson@example.com', '321 Cedar St, Houston, TX', 28),
+('Robert', 'Johnson', '5432109876', '$2b$10$hMlpKkjkdls42hEywK1QGukz0JmET9Oj.k5fhNpxP7H2r8py3.TQW', 'robert.johnson@example.com', '987 Birch St, Phoenix, AZ', 45),
+('Emma', 'Martinez', '4321098765', '$2b$10$JSkzJHTlb1RLkI1Xev5J7eUllBZvIjch0c9zRMSKhRb2FK.dnM7A2', 'emma.martinez@example.com', '654 Maple St, San Francisco, CA', 32),
+('Daniel', 'Taylor', '3210987654', '$2b$10$3GWyjTf59kL9z89r8KBG2ujM3sRnYEV.3Y8cJ6y1wqDFzW03Uoq9q', 'daniel.taylor@example.com', '852 Elm St, Seattle, WA', 38),
+('Olivia', 'Anderson', '2109876543', '$2b$10$nGxmAPES5Wnsx8l2pBIH5uub5X7ahdJ5c7KPz8.T2XlE1/DiMXW8S', 'olivia.anderson@example.com', '159 Spruce St, Denver, CO', 29);
