@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resident Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .dashboard-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      #map {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h2 class="text-center mb-4">Resident Dashboard</h2>
+
+      <div class="row">
+        <!-- Available Guards -->
+        <div class="col-md-4">
+          <div class="dashboard-card">
+            <h4 class="text-center">👮 Available Guards</h4>
+            <hr />
+            <ul id="guardList" class="list-group">
+              <!-- Guards will be added dynamically here -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Map Display -->
+        <div class="col-md-8">
+          <div class="dashboard-card">
+            <h4 class="text-center">📍 Nearby Guards</h4>
+            <hr />
+            <div id="map"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Emergency Section -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="dashboard-card">
+            <h4 class="text-center">🚨 Emergency Services</h4>
+            <hr />
+            <div class="d-flex justify-content-around">
+              <button class="btn btn-danger">🚑 Call Ambulance</button>
+              <button class="btn btn-warning">🔥 Report Fire</button>
+              <button class="btn btn-dark">🔒 Report Theft</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guest Pre-registration Section -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="dashboard-card">
+            <h4 class="text-center">🛬 Guest Pre-Registration</h4>
+            <hr />
+            <form>
+              <div class="mb-3">
+                <label for="guestName" class="form-label">Guest Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="guestName"
+                  placeholder="Enter guest name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="guestTime" class="form-label"
+                  >Expected Arrival Time</label
+                >
+                <input
+                  type="datetime-local"
+                  class="form-control"
+                  id="guestTime"
+                />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Guard Details Modal -->
+      <div
+        class="modal fade"
+        id="guardDetailsModal"
+        tabindex="-1"
+        aria-labelledby="guardDetailsModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="guardDetailsModalLabel">
+                Guard Details
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <p><strong>Name:</strong> <span id="guardName"></span></p>
+              <p><strong>Guard ID:</strong> <span id="guardID"></span></p>
+              <p><strong>Contact:</strong> <span id="guardContact"></span></p>
+              <p>
+                <strong>Current Location:</strong>
+                <span id="guardLocation"></span>
+              </p>
+              <p><strong>Rating:</strong> <span id="guardRating"></span> ⭐</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Dummy data for available guards
+      const guards = [
+        {
+          id: "G101",
+          name: "John Doe",
+          contact: "+1 234 567 890",
+          lat: 28.6139,
+          lng: 77.209,
+          rating: 4.5,
+        },
+        {
+          id: "G102",
+          name: "Mike Ross",
+          contact: "+1 987 654 321",
+          lat: 28.6145,
+          lng: 77.206,
+          rating: 4.2,
+        },
+        {
+          id: "G103",
+          name: "Sarah Smith",
+          contact: "+1 876 543 210",
+          lat: 28.616,
+          lng: 77.211,
+          rating: 4.7,
+        },
+      ];
+
+      // Initialize map
+      const map = L.map("map").setView([28.6139, 77.209], 14);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
+        map
+      );
+
+      // Populate guards list and add markers
+      const guardList = document.getElementById("guardList");
+      guards.forEach((guard) => {
+        const listItem = document.createElement("li");
+        listItem.className = "list-group-item";
+        listItem.textContent = `${guard.name} (${guard.id})`;
+        listItem.onclick = () => showGuardDetails(guard);
+        guardList.appendChild(listItem);
+
+        // Add marker to map
+        const marker = L.marker([guard.lat, guard.lng]).addTo(map);
+        marker
+          .bindPopup(`<b>${guard.name}</b><br>Click for details`)
+          .on("click", () => showGuardDetails(guard));
+      });
+
+      // Show guard details in modal
+      function showGuardDetails(guard) {
+        document.getElementById("guardName").textContent = guard.name;
+        document.getElementById("guardID").textContent = guard.id;
+        document.getElementById("guardContact").textContent = guard.contact;
+        document.getElementById(
+          "guardLocation"
+        ).textContent = `${guard.lat}, ${guard.lng}`;
+        document.getElementById("guardRating").textContent = guard.rating;
+        new bootstrap.Modal(
+          document.getElementById("guardDetailsModal")
+        ).show();
+      }
+    </script>
+  </body>
+</html>

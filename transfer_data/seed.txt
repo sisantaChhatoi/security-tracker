@@ -1,0 +1,9 @@
+INSERT INTO guards (name, phoneNum, password, email, address, age, work_detail_id) VALUES
+('Ethan Harris', '9988776655', '$2b$10$XjK9l5P4y5H8JkD7fXjKel/W6gGh8Xv9V/UyMwUVu1Hp6HjWOS', 'ethan.harris@example.com', '789 King St, Boston, MA', 42, 201),
+('Charlotte White', '8877665544', '$2b$10$T3GWyjTf59kL9z89r8KBG2ujM3sRnYEV.3Y8cJ6y1wqDFzW03Uoq9q', 'charlotte.white@example.com', '963 Park Ave, San Diego, CA', 36, 202),
+('Liam Garcia', '7766554433', '$2b$10$nGxmAPES5Wnsx8l2pBIH5uub5X7ahdJ5c7KPz8.T2XlE1/DiMXW8S', 'liam.garcia@example.com', '852 Forest St, Miami, FL', 30, 203),
+('Isabella Lopez', '6655443322', '$2b$10$p5Xq.2O7uUo9AKRkDk1z2.GFVUGc9FS0U9uMaO1uBWqz1Q0xV49UO', 'isabella.lopez@example.com', '741 Highland Ave, Austin, TX', 28, 204),
+('James Walker', '5544332211', '$2b$10$7HrIjLJjCuoJgfDS2XpFKeMLbS5BfMfmhBdI7uFh7Gpm.eTVZ5z82', 'james.walker@example.com', '369 Broadway St, Dallas, TX', 50, 205),
+('Ava Hall', '4433221100', '$2b$10$8zS2D6sTfTRZyydHRJfLyOKj1Bt4Lox1sOb0rbZvG3AAsSzExFn8m', 'ava.hall@example.com', '147 Harbor St, San Jose, CA', 33, 206),
+('William Allen', '3322110099', '$2b$10$JSkzJHTlb1RLkI1Xev5J7eUllBZvIjch0c9zRMSKhRb2FK.dnM7A2', 'william.allen@example.com', '258 Victory St, Philadelphia, PA', 39, 207),
+('Mia Young', '2211009988', '$2b$10$hMlpKkjkdls42hEywK1QGukz0JmET9Oj.k5fhNpxP7H2r8py3.TQW', 'mia.young@example.com', '369 Grand Ave, Atlanta, GA', 27, 208);

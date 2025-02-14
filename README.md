@@ -26,13 +26,3 @@ compliance with assigned shifts.
 personnel.
 9. Guard Performance & Feedback System ⭐ – Businesses and residents can rate
 guards based on past performance, helping in future duty assignments.
-💡 Advanced Challenges
-✅ Automated Guard Attendance Alerts – Notify supervisors if guards fail to check in/out.
-✅ Geo-Fencing for Duty Areas – Alert supervisors if a guard moves out of an assigned
-security zone.
-✅ Offline Mode for Field Updates – Allow guards & field agents to update forms offline,
-syncing data when online.
-✅ Predictive Guard Deployment – Suggest security placements based on historical
-incidents & high-risk areas.
-✅ Live Surveillance Dashboard – Build an admin panel with real-time security alerts and
-guard tracking in one view.
