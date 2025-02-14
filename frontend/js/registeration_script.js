@@ -1,13 +1,13 @@
 //Selecting all elements from registeration page
 
-const firstNameElem = document.getElementById("");
-const lastNameElem = document.getElementById("");
-const phoneNumElem = document.getElementById("");
-const pwdElem = document.getElementById("");
-const confirm_pwdElem = document.getElementById("");
-const emailElem = document.getElementById("");
-const addressElem = document.getElementById("");
-const ageElem = document.getElementById("");
+const firstNameElem = document.getElementById("firstName");
+const lastNameElem = document.getElementById("lastName");
+const phoneNumElem = document.getElementById("mobNumber");
+const pwdElem = document.getElementById("pwd");
+const confirm_pwdElem = document.getElementById("confirm_pwd");
+const emailElem = document.getElementById("mail");
+const addressElem = document.getElementById("address");
+const ageElem = document.getElementById("age");
 
 const registerBtn = document.getElementById("");
 
