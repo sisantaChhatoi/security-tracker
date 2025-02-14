@@ -3,8 +3,8 @@
 const firstNameElem = document.getElementById("firstName");
 const lastNameElem = document.getElementById("lastName");
 const phoneNumElem = document.getElementById("mobNumber");
-const pwdElem = document.getElementById("pwd");
-const confirm_pwdElem = document.getElementById("confirm_pwd");
+const passwordElem = document.getElementById("password");
+const confirm_passwordElem = document.getElementById("confirm_password");
 const emailElem = document.getElementById("mail");
 const addressElem = document.getElementById("address");
 const ageElem = document.getElementById("age");
@@ -16,11 +16,10 @@ const saltRounds = 10;
 
 //Guard class definition
 class Guard {
-  constructor(firstName, lastName, phoneNum, pwd, email, address, age) {
-    this.firstName = firstName;
-    this.lastName = lastName;
+  constructor(firstName, lastName, phoneNum, password, email, address, age) {
+    this.name = `${firstName} ${lastName}`
     this.phoneNum = phoneNum;
-    this.pwd = pwd;
+    this.password = password;
     this.email = email;
     this.address = address;
     this.age = age;
@@ -63,7 +62,7 @@ registerBtn.addEventListener("click", (e) => {
     firstNameElem.value,
     lastNameElem.value,
     phoneNumElem.value,
-    pwdElem.value,
+    passwordElem.value,
     emailElem.value,
     addressElem.value,
     ageElem.value
@@ -77,9 +76,8 @@ registerBtn.addEventListener("click", (e) => {
     if (
       !(
         firstNameElem.value &&
-        lastNameElem.value &&
         phoneNumElem.value &&
-        pwdElem.value &&
+        passwordElem.value &&
         addressElem.value &&
         ageElem.value
       )
@@ -88,10 +86,10 @@ registerBtn.addEventListener("click", (e) => {
       return;
     } else if (!guardRegister) {
       //checks if both passwords are equal
-      if (pwdElem.value == confirm_pwdElem.value) {
+      if (passwordElem.value == confirm_passwordElem.value) {
         console.log("Succesfully registered!");
-        encryptPassword(confirm_pwdElem.value).then((response) => {
-          newGuard.pwd = response; //this updates the pwd with encrypted pwd
+        encryptPassword(confirm_passwordElem.value).then((response) => {
+          newGuard.password = response; //this updates the password with encrypted password
           sendData();
           window.location.href = "login.html"
           alert("Registeration successful!");

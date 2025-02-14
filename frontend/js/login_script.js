@@ -1,7 +1,7 @@
 //Selecting all the elements
 
 const phoneNumElem = document.getElementById("mobNumber");
-const pwdElem = document.getElementById("pwd");
+const passwordElem = document.getElementById("password");
 
 //! Include mail address in the logic of the code
 const mailElement = document.getElementById("emailAddress");
