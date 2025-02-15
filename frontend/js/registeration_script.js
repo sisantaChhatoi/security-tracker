@@ -139,3 +139,7 @@ registerBtn.addEventListener("click", async (e) => {
       console.error(error);
     }
   }
+
+  document.getElementById ('loginBtn').addEventListener ('click', (e) => {
+    window.location.href = "../html/login.html"
+  })

@@ -44,7 +44,7 @@ loginBtn.addEventListener("click", async (e) => {
     });
   } else {
     localStorage.setItem("token", phoneNumElem.value);
-    window.location.href = "guard_dashboard.html";
+    window.location.href = "../html/guard_dashBoard_new.html";
   }
 });
 
