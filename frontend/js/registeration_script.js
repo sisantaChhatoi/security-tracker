@@ -11,8 +11,8 @@ const ageElem = document.getElementById("age");
 
 const registerBtn = document.getElementById("registerBtn");
 
-//Below is the number of salts for bcrypt
-const saltRounds = 10;
+// //Below is the number of salts for bcrypt
+// const saltRounds = 10;
 
 //Guard class definition
 class Guard {
@@ -26,16 +26,16 @@ class Guard {
   }
 }
 
-//This returns an encrypted password
-async function encryptPassword(password) {
-  try {
-    const salt = await bcrypt.genSalt(saltRounds);
-    const hash = await bcrypt.hash(password, salt);
-    return hash;
-  } catch (error) {
-    console.error("Error hashing password:", error);
-  }
-}
+// //This returns an encrypted password
+// async function encryptPassword(password) {
+//   try {
+//     const salt = await bcrypt.genSalt(saltRounds);
+//     const hash = await bcrypt.hash(password, salt);
+//     return hash;
+//   } catch (error) {
+//     console.error("Error hashing password:", error);
+//   }
+// }
 
 //check if guard is registered or not
 async function isGuardRegistered(phoneNum) {
@@ -84,8 +84,8 @@ registerBtn.addEventListener("click", async (e) => {
     if (passwordElem.value === confirm_passwordElem.value) {
       console.log("Successfully registered!");
       
-      // Encrypt the password before sending it
-      newGuard.password = await encryptPassword(confirm_passwordElem.value);
+      // // Encrypt the password before sending it
+      // newGuard.password = await encryptPassword(confirm_passwordElem.value);
       
       await sendData(newGuard);
 
