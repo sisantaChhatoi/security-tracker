@@ -53,6 +53,8 @@ const timeDelay = 120;
 const factor = 5;
 const txtArea = document.querySelector(".typed-text");
 
+//Adding automatic text
+
 function deleteLetters(value) {
   let index = value.length;
   const endId = setInterval(() => {
