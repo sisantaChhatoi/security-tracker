@@ -38,6 +38,16 @@ loginBtn.addEventListener("click", (e) => {
   result.then((guardRegister) => {
     if (!guardRegister) {
       alert("Kindly register yourself!");
+      Swal.fire({
+        title: "Not registered!",
+        text: "Make sure to register yourself before proceeding",
+        icon: "warning",
+        confirmButtonText: "Register"
+      }).then ((result) => {
+        if (result.isConfirmed) {
+          window.location.href= "registeration.html"
+        }
+      });
     } else {
       //if registered then takes the token (phoneNum) and saves in the local storage
       localStorage.setItem("token", phoneNumElem.value);

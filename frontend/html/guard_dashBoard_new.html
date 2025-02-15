@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guard Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+      body {
+        background: #f4f6f8;
+        font-family: 'Arial', sans-serif;
+      }
+      .navbar-brand, .nav-link {
+        font-family: 'Arial Black', sans-serif;
+        font-size: 1.2rem;
+        transition: color 0.3s ease-in-out;
+      }
+      .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        background-color: #ffffff;
+        transition: all 0.3s ease-in-out;
+        margin-bottom: 20px;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      .guard-profile-card {
+        background-color: #1d1d1d;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .guard-profile-card h4 {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      .guard-profile-card .guard-profile-pic {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid #007bff;
+        margin-bottom: 15px;
+        margin-left: 43%;
+        transition: border-color 0.3s ease;
+      }
+      .guard-profile-card .guard-profile-pic:hover {
+        border-color: #00bcd4;
+      }
+      .emergency-btn {
+        background-color: #e74c3c;
+        color: #fff;
+        margin-top: 5%;
+        font-weight: bold;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        width: 100%;
+      }
+      .emergency-btn:hover {
+        background-color: #c0392b;
+      }
+      .shift-details-card {
+        background-color: #34495e;
+        color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+      }
+      .shift-details-card h4 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      .shift-details-card p {
+        font-size: 1.1rem;
+      }
+      .shift-details-card .badge {
+        background-color: #1abc9c;
+      }
+      .shift-details-card .badge.bg-success {
+        background-color: #16a085;
+      }
+      #map {
+        width: 100%;
+        height: 400px;
+        border-radius: 15px;
+        margin-top: 8px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .dashboard-card {
+          padding: 15px;
+        }
+        .guard-profile-card {
+          margin-top: 20px;
+        }
+        .emergency-btn {
+          margin-top: 10px;
+        }
+        .col-md-6 {
+          margin-bottom: 20px;
+        }
+        #map {
+          height: 300px; /* Reduced height for smaller screens */
+        }
+        .navbar-nav {
+          flex-direction: column; /* Stack navbar items vertically on small screens */
+        }
+        .dropdown-menu {
+          min-width: 150px; /* Dropdown width adjustment */
+        }
+      }
+
+      @media (max-width: 576px) {
+        .guard-profile-card h4 {
+          font-size: 1.5rem; /* Adjust font size for small screens */
+        }
+        .card {
+          margin-bottom: 15px; /* Reduce card margin */
+        }
+        .shift-details-card h4 {
+          font-size: 1.3rem;
+        }
+        .emergency-btn {
+          font-size: 1.2rem;
+          padding: 15px; /* Increase button size for better accessibility */
+        }
+        .guard-profile-card .guard-profile-pic {
+          width: 80px; /* Smaller profile picture */
+          height: 80px;
+        }
+        .container {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Security Guard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h2 class="text-center mb-4 text-black" style="margin-top: 10%;">Guard Dashboard</h2>
+    <div class="row">
+        <!-- Left Side: Guard Profile & Shift Details -->
+        <div class="col-md-6">
+          <div class="row">
+            <!-- Guard Profile Card -->
+            <div class="col-md-12">
+              <div class="card guard-profile-card">
+                <!-- Dropdown for Guard Selection (Moved to the top) -->
+                <div class="dropdown mb-3">
+                  <button class="btn btn-outline-primary dropdown-toggle" type="button" id="guardDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Guard
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="guardDropdown">
+                    <li><a class="dropdown-item" href="#" onclick="changeGuardProfile('Guard1')">Guard1</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="changeGuardProfile('Guard2')">Guard2</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="changeGuardProfile('Guard3')">Guard3</a></li>
+                  </ul>
+                </div>
+
+                <h4>👮 Guard Profile</h4>
+                <hr />
+                <p><strong>Name:</strong> <span id="guard-name">--- ---</span></p>
+                <p><strong>Guard ID:</strong> <span id="guard-id">G12345</span></p>
+                <p><strong>Contact:</strong> <span id="guard-contact">+1 234 567 890</span></p>
+                <p>
+                  <strong>Status:</strong>
+                  <span class="badge bg-success" id="guard-status">On Duty</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Shift Details Card -->
+            <div class="col-md-12 mt-3">
+              <div class="card shift-details-card">
+                <h4 class="text-center">📅 Shift Details</h4>
+                <hr />
+                <p><strong>Current Shift:</strong> <span id="current-shift">6:00 AM - 2:00 PM</span></p>
+                <p><strong>Duty Location:</strong> <span id="duty-location">Sector 21, Main Gate</span></p>
+                <p><strong>Next Shift:</strong> <span id="next-shift">8:00 PM - 4:00 AM</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Map & Emergency Alert -->
+        <div class="col-md-6">
+          <div class="row">
+            <!-- Map -->
+            <div class="col-md-12">
+              <div id="map"></div>
+            </div>
+
+            <!-- Emergency Alert -->
+            <div class="col-md-12 mt-3">
+              <button
+                class="btn emergency-btn btn-lg"
+                onclick="sendEmergencyAlert()"
+              >
+                ⚠ Trigger Alarm
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+  <script src="../js/guard_dashboard_script.js"></script>
+</html>

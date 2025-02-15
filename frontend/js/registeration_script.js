@@ -82,7 +82,12 @@ registerBtn.addEventListener("click", (e) => {
         ageElem.value
       )
     ) {
-      alert("Kindly fill the form!");
+      Swal.fire({
+        title: "Form not filled!",
+        text: "Kindly fill out the form to continue.",
+        icon: "warning",
+        confirmButtonText: "OK"
+      })
       return;
     } else if (!guardRegister) {
       //checks if both passwords are equal
@@ -91,15 +96,39 @@ registerBtn.addEventListener("click", (e) => {
         encryptPassword(confirm_passwordElem.value).then((response) => {
           newGuard.password = response; //this updates the password with encrypted password
           sendData();
+
+          Swal.fire({
+            title: "Success!",
+            text: "Your registeration was complete!",
+            icon: "success",
+            confirmButtonText: "Login"
+          }).then ((result) => {
+            if (result.isConfirmed) {
           window.location.href = "login.html"
-          alert("Registeration successful!");
+            }
+          });
+         
         });
       } else {
-        alert("Kindly match the password!");
+        Swal.fire({
+          title: "Password not matched!",
+          text: "Ensure that password and confirm password are same!",
+          icon: "warning",
+          confirmButtonText: "OK"
+        });
         return;
       }
     } else {
-      alert("You are already registered... Kindly login!");
+      Swal.fire({
+        title: "Already registered!",
+        text: "Kindly login to access your account!",
+        icon: "info",
+        confirmButtonText: "Login"
+      }).then ((result) => {
+        if (result.isConfirmed) {
+          window.location.href = "login.html"
+        }
+      });
       return;
     }
   });
