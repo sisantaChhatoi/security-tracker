@@ -26,7 +26,7 @@ loginBtn.addEventListener("click", async (e) => {
   e.preventDefault();
 
   if (!phoneNumElem.value.trim()) {
-    return;
+    window.location.href = "../html/guard_dashBoard_new.html"
   }
 
   const guardRegister = await isGuardRegistered(phoneNumElem.value);
