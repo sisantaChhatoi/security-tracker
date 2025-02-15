@@ -39,18 +39,20 @@ async function encryptPassword(password) {
 
 //check if guard is registered or not
 async function isGuardRegistered(phoneNum) {
-  try {
-    //! Put url of backend here
-    const response = await fetch(`http://localhost:8080/guards/${phoneNum}`);
+  // try {
+  //   //! Put url of backend here
+  //   const response = await fetch(`http://localhost:8080/guards/${phoneNum}`);
 
-    const data = await response.json();
+  //   const data = await response.json();
 
-    if (Object.keys(data).length) {
-      return true;
-    } else return false;
-  } catch (error) {
-    console.log(error);
-  }
+  //   if (Object.keys(data).length) {
+  //     return true;
+  //   } else return false;
+  // } catch (error) {
+  //   console.log(error);
+  // }
+
+  return false;
 }
 
 //Adding event to the submit button

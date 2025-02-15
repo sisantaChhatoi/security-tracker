@@ -37,7 +37,6 @@ loginBtn.addEventListener("click", (e) => {
 
   result.then((guardRegister) => {
     if (!guardRegister) {
-      alert("Kindly register yourself!");
       Swal.fire({
         title: "Not registered!",
         text: "Make sure to register yourself before proceeding",
