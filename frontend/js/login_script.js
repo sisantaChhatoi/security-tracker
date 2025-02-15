@@ -22,30 +22,34 @@ async function isGuardRegistered(phoneNum) {
 }
 
 // Login event
-loginBtn.addEventListener("click", async (e) => {
+loginBtn.addEventListener("click",  (e) => {
   e.preventDefault();
 
-  if (!phoneNumElem.value.trim()) {
-    window.location.href = "../html/guard_dashBoard_new.html"
-  }
+  // if (!phoneNumElem.value.trim()) {
+  //   window.location.href = "../html/guard_dashBoard_new.html"
+  // }
 
-  const guardRegister = await isGuardRegistered(phoneNumElem.value);
+  // const guardRegister = await isGuardRegistered(phoneNumElem.value);
 
-  if (!guardRegister) {
-    Swal.fire({
-      title: "Not registered!",
-      text: "Make sure to register yourself before proceeding",
-      icon: "warning",
-      confirmButtonText: "Register"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = "registeration.html";
-      }
-    });
-  } else {
-    localStorage.setItem("token", phoneNumElem.value);
-    window.location.href = "../html/guard_dashBoard_new.html";
-  }
+  // if (!guardRegister) {
+  //   Swal.fire({
+  //     title: "Not registered!",
+  //     text: "Make sure to register yourself before proceeding",
+  //     icon: "warning",
+  //     confirmButtonText: "Register"
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       window.location.href = "registeration.html";
+  //     }
+  //   });
+  // } else {
+  //   localStorage.setItem("token", phoneNumElem.value);
+  //   window.location.href = "../html/guard_dashBoard_new.html";
+
+
+  // }
+
+  window.location.href = "../html/guard_dashBoard_new.html"
 });
 
 let arr = [];
