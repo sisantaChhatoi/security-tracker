@@ -1,0 +1,40 @@
+   /* Card Hover Effect */
+        .card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Padding adjustment to avoid content hidden under the fixed navbar */
+        .content {
+            padding-top: 70px; /* Adjust according to the height of your navbar */
+        }
+
+        /* Ensuring card icons are centered */
+        .card-body i {
+            font-size: 3rem;
+            color: #28a745; /* New color for icons */
+        }
+        
+        .card-footer i {
+            font-size: 1.5rem;
+            color: #28a745; /* New color for icons */
+            transition: transform 0.3s ease;
+        }
+
+        .card-footer i:hover {
+            transform: translateY(5px);
+        }
+
+        /* Ensuring responsiveness for smaller screens */
+        @media (max-width: 576px) {
+            .card-body i {
+                font-size: 2.5rem;
+            }
+            .card-title {
+                font-size: 1.2rem;
+            }
+            .card-text {
+                font-size: 0.9rem;
+            }
+        }
+

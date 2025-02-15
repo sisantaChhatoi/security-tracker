@@ -1,314 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Security Guard Website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
-    
-    <style>
-        .bgandall {
-            background: url('../assets/secGuard.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            margin: 0;
-            padding: 0;
-            
-        }
-        
-        .main-container {
-            
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-            padding-left: 5%;
-        }
-
-        .content {
-            color: white;
-            padding: 30px;
-            max-width: 40%;
-        }
-
-        .hero-title {
-            font-size: 50px;
-            font-weight: bold;
-            color: #FFD700; /* Golden color for better contrast */
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
-
-        .hero-text {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        .btn-primary:hover {
-            background-color: #0056b3;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .main-container {
-                padding-left: 2%;
-                justify-content: center;
-                text-align: center;
-            }
-            .content {
-                max-width: 90%;
-            }
-        }
-    </style>
-</head>
-<body>
-    
-  
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/index_style.css" />
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Security Guard</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav "style="margin-left:37%;"> <!-- Centers LOGIN & REGISTER -->
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-warning me-2" href="../html/login.html">LOGIN</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-outline-success me-4" href="../html/Registration.html">REGISTER</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ms-auto"> <!-- Aligns menu items to right -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/aboutUs.html">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../html/service.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Security Guard</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" style="margin-left: 37%">
+            <!-- Centers LOGIN & REGISTER -->
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-outline-warning me-2"
+                href="../html/login.html"
+                >LOGIN</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link btn btn-outline-success me-4"
+                href="../html/Registration.html"
+                >REGISTER</a
+              >
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <!-- Aligns menu items to right -->
+            <li class="nav-item">
+              <a class="nav-link" href="">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/aboutUs.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../html/service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-    
-    <!-- Left Side Text Section -->
-     <div class="bgandall">
-    <div class="main-container">
-        <div class="content">
-            <h1 class="hero-title">Reliable Security Services</h1>
-            <p class="hero-text">We provide professional security guard services for businesses, events, and personal protection. Safety is our top priority.</p>
-            <a href="" class="btn btn-primary">Get Started</a>
-        </div>
-    </div>
-</div>
-<div class="container text-center my-5">
-    <h1 class="text-3xl font-bold text-blue-900">
-        Bring Your Physical Security Operations To The Next Level
-    </h1>
-    <p class="text-orange-500 mt-2">
-        The Most Advanced Security Guard Management Platform
-    </p>
 
-    <div class="row mt-4">
+    <!-- Left Side Text Section -->
+    <div class="bgandall">
+      <div class="main-container">
+        <div class="content">
+          <h1 class="hero-title">Reliable Security Services</h1>
+          <p class="hero-text">
+            We provide professional security guard services for businesses,
+            events, and personal protection. Safety is our top priority.
+          </p>
+          <a href="" class="btn btn-primary">Get Started</a>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center my-5">
+      <h1 class="text-3xl font-bold text-blue-900">
+        Bring Your Physical Security Operations To The Next Level
+      </h1>
+      <p class="text-orange-500 mt-2">
+        The Most Advanced Security Guard Management Platform
+      </p>
+
+      <div class="row mt-4">
         <!-- First Row -->
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/eRvpmvblVsaH8KWSXzYnBJm0A_7p6VMS4p_wV4TEvmg.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Live Tracking</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/eRvpmvblVsaH8KWSXzYnBJm0A_7p6VMS4p_wV4TEvmg.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Live Tracking</p>
+          </div>
         </div>
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/PmXAw-LrNH9TrI3jbRlJSUFLBYSxrS1efGNNZr7aS6c.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Geofence</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/PmXAw-LrNH9TrI3jbRlJSUFLBYSxrS1efGNNZr7aS6c.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Geofence</p>
+          </div>
         </div>
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/OAahtUyWFi_1-DdL9FE4xYhi_X0GXHwJCJ2ogGm4Kvo.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Site Tours</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/OAahtUyWFi_1-DdL9FE4xYhi_X0GXHwJCJ2ogGm4Kvo.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Site Tours</p>
+          </div>
         </div>
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/GpXbM7IW3vYAkjDv6BrcH-5d_21tZKZpENAXts3_9WI.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Custom Reports</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/GpXbM7IW3vYAkjDv6BrcH-5d_21tZKZpENAXts3_9WI.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Custom Reports</p>
+          </div>
         </div>
 
         <!-- Second Row -->
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/yQYNnxJ3JhdW0CutLcseHRf2vXV_4aefvxq06zGgeyE.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Scheduler</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/yQYNnxJ3JhdW0CutLcseHRf2vXV_4aefvxq06zGgeyE.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Scheduler</p>
+          </div>
         </div>
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/y5Rd5JjwCgHS38BhARwKg27joowD9xUtGi2SwuCKCmA.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Time Clock</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/y5Rd5JjwCgHS38BhARwKg27joowD9xUtGi2SwuCKCmA.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Time Clock</p>
+          </div>
         </div>
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/d-R371p01uAG8ILojBdXdLvdp5w_U797n6-g1emY574.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Dispatcher</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/d-R371p01uAG8ILojBdXdLvdp5w_U797n6-g1emY574.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Dispatcher</p>
+          </div>
         </div>
         <div class="col-md-3 col-sm-6 mb-4">
-            <div class="p-4 border rounded-lg shadow-md">
-                <img src="https://storage.googleapis.com/a1aa/image/TvFM4H_TEPopEl3qVkB6TBEqhcBWD9j-ZFswAe64Qgc.jpg" width="50" height="50" class="mb-3" />
-                <p class="font-semibold">Messenger</p>
-            </div>
+          <div class="p-4 border rounded-lg shadow-md">
+            <img
+              src="https://storage.googleapis.com/a1aa/image/TvFM4H_TEPopEl3qVkB6TBEqhcBWD9j-ZFswAe64Qgc.jpg"
+              width="50"
+              height="50"
+              class="mb-3"
+            />
+            <p class="font-semibold">Messenger</p>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <button class="mt-3 px-6 py-3 bg-white border rounded-full shadow-md text-gray-700 hover:bg-gray-100">
+      <button
+        class="mt-3 px-6 py-3 bg-white border rounded-full shadow-md text-gray-700 hover:bg-gray-100"
+      >
         View All Features <i class="fas fa-arrow-right ml-2"></i>
-    </button>
-</div>
-
-      
-<section class="text-center py-12">
-    <h1 class="text-4xl font-bold mb-4">
-     See What The Clients Say About
-    </h1>
-    <h2 class="text-4xl font-bold mb-4"style="color:blue;">
-     Security Guard website
-    </h2>
-    <p class="text-lg text-gray-600 mb-2">
-     Security Guards And Clients Highly Appreciate
-    </p>
-    <p class="text-lg text-gray-600 mb-6">
-     Security Guard web Features
-    </p>
-    <div class="w-16 h-1 bg-blue-600 mx-auto mb-12">
+      </button>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-12 lg:px-24">
-     <div class="bg-white shadow-lg p-6 rounded-lg relative">
-      <div class="absolute top-0 left-0 w-16 h-16 bg-gray-100 flex items-center justify-center">
-       <i class="fas fa-quote-left text-4xl text-gray-300">
-       </i>
-      </div>
-      <p class="text-gray-700 mt-8 mb-4">
-       The time clock and messaging features attracted me and then there are so many other bonus features that adopting Security Guard website was a very easy decision. I love the idea that with minimum training it can be put to use quickly.
-      </p>
-      <div class="flex items-center">
-       <img alt="Profile picture of Patrick H." class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/PHcgJxRfjweps57vV3P_Wu51vu9lLqb6N9FmuV3TGTM.jpg" width="50"/>
-       <div>
-        <p class="font-bold">
-         Patrick H.
-        </p>
-        <p class="text-gray-600">
-         Security Guard
-        </p>
-       </div>
-      </div>
-     </div>
-     <div class="bg-white shadow-lg p-6 rounded-lg relative">
-      <div class="absolute top-0 left-0 w-16 h-16 bg-gray-100 flex items-center justify-center">
-       <i class="fas fa-quote-left text-4xl text-gray-300">
-       </i>
-      </div>
-      <p class="text-gray-700 mt-8 mb-4">
-       I like Security Guard website. I had tried quite a few apps before settling on it and it is by far the best value option I’ve tried. We use it for sharing post orders, all our timesheets are completed in it, and we use the chat function to communicate patrol updates. Great software. So much better than many other options out there.
-      </p>
-      <div class="flex items-center">
-       <img alt="Profile picture of Mark V." class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/O-7zQXfQvvCMUWy24r5ryMhLXtuJH-mhYgJ224B2rTA.jpg" width="50"/>
-       <div>
-        <p class="font-bold">
-         Mark V.
-        </p>
-        <p class="text-gray-600">
-         Security Guard
-        </p>
-       </div>
-      </div>
-     </div>
-     <div class="bg-white shadow-lg p-6 rounded-lg relative">
-      <div class="absolute top-0 left-0 w-16 h-16 bg-gray-100 flex items-center justify-center">
-       <i class="fas fa-quote-left text-4xl text-gray-300">
-       </i>
-      </div>
-      <p class="text-gray-700 mt-8 mb-4">
-       The features Security Guard website has to offer, cover everything we need to build a well-organized security team to deliver extraordinary security guard services. Highly recommended if you want to take your business to the next level!
-      </p>
-      <div class="flex items-center">
-       <img alt="Profile picture of Andrew Archer" class="w-12 h-12 rounded-full mr-4" height="50" src="https://storage.googleapis.com/a1aa/image/0apQ0i-cscmhD2tyH1EFnsR2FzxVeR_9MtTIjeYkrkE.jpg" width="50"/>
-       <div>
-        <p class="font-bold">
-         Andrew Archer
-        </p>
-        <p class="text-gray-600">
-         Director of Field Operations
-        </p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section>
 
-<div class="row text-sm"style="background-color:black; color:white;">
-    <div class="col-12 col-sm-6 col-md-3 mb-4" style="margin-top: 2%; ">
-        <h2 class="font-weight-bold mb-4"style="margin-left:20%">PLATFORM</h2>
-        <ul class="list-unstyled"style="margin-left:20%">
-            <li class="mb-2">Security Team</li>
-            <li class="mb-2">Reporting</li>
-            <li class="mb-2">Time Clock</li>
-            <li class="mb-2">GPS Tracking</li>
-            <li class="mb-2">Messenger</li>
-            <li class="mb-2">Post Orders</li>
-            <li class="mb-2">Passdown Logs</li>
-            <li class="mb-2">Panic Alert</li>
+    <section class="text-center py-12">
+      <h1 class="text-4xl font-bold mb-4">See What The Clients Say About</h1>
+      <h2 class="text-4xl font-bold mb-4" style="color: blue">
+        Security Guard website
+      </h2>
+      <p class="text-lg text-gray-600 mb-2">
+        Security Guards And Clients Highly Appreciate
+      </p>
+      <p class="text-lg text-gray-600 mb-6">Security Guard web Features</p>
+      <div class="w-16 h-1 bg-blue-600 mx-auto mb-12"></div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-12 lg:px-24"
+      >
+        <div class="bg-white shadow-lg p-6 rounded-lg relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-gray-100 flex items-center justify-center"
+          >
+            <i class="fas fa-quote-left text-4xl text-gray-300"> </i>
+          </div>
+          <p class="text-gray-700 mt-8 mb-4">
+            The time clock and messaging features attracted me and then there
+            are so many other bonus features that adopting Security Guard
+            website was a very easy decision. I love the idea that with minimum
+            training it can be put to use quickly.
+          </p>
+          <div class="flex items-center">
+            <img
+              alt="Profile picture of Patrick H."
+              class="w-12 h-12 rounded-full mr-4"
+              height="50"
+              src="https://storage.googleapis.com/a1aa/image/PHcgJxRfjweps57vV3P_Wu51vu9lLqb6N9FmuV3TGTM.jpg"
+              width="50"
+            />
+            <div>
+              <p class="font-bold">Patrick H.</p>
+              <p class="text-gray-600">Security Guard</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-6 rounded-lg relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-gray-100 flex items-center justify-center"
+          >
+            <i class="fas fa-quote-left text-4xl text-gray-300"> </i>
+          </div>
+          <p class="text-gray-700 mt-8 mb-4">
+            I like Security Guard website. I had tried quite a few apps before
+            settling on it and it is by far the best value option I’ve tried. We
+            use it for sharing post orders, all our timesheets are completed in
+            it, and we use the chat function to communicate patrol updates.
+            Great software. So much better than many other options out there.
+          </p>
+          <div class="flex items-center">
+            <img
+              alt="Profile picture of Mark V."
+              class="w-12 h-12 rounded-full mr-4"
+              height="50"
+              src="https://storage.googleapis.com/a1aa/image/O-7zQXfQvvCMUWy24r5ryMhLXtuJH-mhYgJ224B2rTA.jpg"
+              width="50"
+            />
+            <div>
+              <p class="font-bold">Mark V.</p>
+              <p class="text-gray-600">Security Guard</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white shadow-lg p-6 rounded-lg relative">
+          <div
+            class="absolute top-0 left-0 w-16 h-16 bg-gray-100 flex items-center justify-center"
+          >
+            <i class="fas fa-quote-left text-4xl text-gray-300"> </i>
+          </div>
+          <p class="text-gray-700 mt-8 mb-4">
+            The features Security Guard website has to offer, cover everything
+            we need to build a well-organized security team to deliver
+            extraordinary security guard services. Highly recommended if you
+            want to take your business to the next level!
+          </p>
+          <div class="flex items-center">
+            <img
+              alt="Profile picture of Andrew Archer"
+              class="w-12 h-12 rounded-full mr-4"
+              height="50"
+              src="https://storage.googleapis.com/a1aa/image/0apQ0i-cscmhD2tyH1EFnsR2FzxVeR_9MtTIjeYkrkE.jpg"
+              width="50"
+            />
+            <div>
+              <p class="font-bold">Andrew Archer</p>
+              <p class="text-gray-600">Director of Field Operations</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="row text-sm" style="background-color: black; color: white">
+      <div class="col-12 col-sm-6 col-md-3 mb-4" style="margin-top: 2%">
+        <h2 class="font-weight-bold mb-4" style="margin-left: 20%">PLATFORM</h2>
+        <ul class="list-unstyled" style="margin-left: 20%">
+          <li class="mb-2">Security Team</li>
+          <li class="mb-2">Reporting</li>
+          <li class="mb-2">Time Clock</li>
+          <li class="mb-2">GPS Tracking</li>
+          <li class="mb-2">Messenger</li>
+          <li class="mb-2">Post Orders</li>
+          <li class="mb-2">Passdown Logs</li>
+          <li class="mb-2">Panic Alert</li>
         </ul>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 mb-4"style="margin-top: 2%;">
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 mb-4" style="margin-top: 2%">
         <h2 class="font-weight-bold mb-4">SOLUTION</h2>
         <ul class="list-unstyled">
-            <li class="mb-2">SG Companies</li>
-            <li class="mb-2">Corporate Security</li>
-            <li class="mb-2">Hospitality Security</li>
-            <li class="mb-2">Campus Security</li>
-            <li class="mb-2">Healthcare Security</li>
-            <li class="mb-2">Event Security</li>
+          <li class="mb-2">SG Companies</li>
+          <li class="mb-2">Corporate Security</li>
+          <li class="mb-2">Hospitality Security</li>
+          <li class="mb-2">Campus Security</li>
+          <li class="mb-2">Healthcare Security</li>
+          <li class="mb-2">Event Security</li>
         </ul>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 mb-4"style="margin-top: 2%;">
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 mb-4" style="margin-top: 2%">
         <h2 class="font-weight-bold mb-4">RESOURCES</h2>
         <ul class="list-unstyled">
-            <li class="mb-2">About Us</li>
-            <li class="mb-2">Blog</li>
-            <li class="mb-2">Contact Us</li>
-            <li class="mb-2">Customer Success</li>
-            <li class="mb-2">Case Studies</li>
-            <li class="mb-2">Support Center</li>
+          <li class="mb-2">About Us</li>
+          <li class="mb-2">Blog</li>
+          <li class="mb-2">Contact Us</li>
+          <li class="mb-2">Customer Success</li>
+          <li class="mb-2">Case Studies</li>
+          <li class="mb-2">Support Center</li>
         </ul>
-    </div>
-    <div class="col-12 col-sm-6 col-md-3 mb-4"style="margin-top: 2%;">
+      </div>
+      <div class="col-12 col-sm-6 col-md-3 mb-4" style="margin-top: 2%">
         <h2 class="font-weight-bold mb-4">LEGAL</h2>
         <ul class="list-unstyled">
-            <li class="mb-2">Terms Of Service</li>
-            <li class="mb-2">Privacy Policy</li>
+          <li class="mb-2">Terms Of Service</li>
+          <li class="mb-2">Privacy Policy</li>
         </ul>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
