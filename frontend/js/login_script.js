@@ -1,132 +1,121 @@
-//Selecting all the elements
-
+// Selecting all elements
 const phoneNumElem = document.getElementById("mobNumber");
 const passwordElem = document.getElementById("password");
-
-//! Include mail address in the logic of the code
 const mailElement = document.getElementById("emailAddress");
 const loginBtn = document.getElementById("logInBtn");
 
-//check if guard is registered or not
+// Check if guard is registered
 async function isGuardRegistered(phoneNum) {
   try {
-    //! Put url of backend here
-    const response = await fetch(`/users?phoneNum=${phoneNum}`);
+    const response = await fetch(`http://localhost:8000/users?phoneNum=${phoneNum}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
     const data = await response.json();
-
-    if (Object.keys(data).length) {
-      return true;
-    } else return false;
+    return data.length > 0;
   } catch (error) {
-    console.log(error);
+    console.error("Error checking registration:", error);
+    return false;
   }
 }
 
-//Does the login (or rejects if not registered)
-loginBtn.addEventListener("click", (e) => {
+// Login event
+loginBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
 
-  e.preventDefault()
-  //Checks if the input field is empty
   if (!phoneNumElem.value.trim()) {
     return;
   }
 
-  //result is the promise reference- it receives a response from the server side
-  const result = isGuardRegistered(phoneNumElem.value);
+  const guardRegister = await isGuardRegistered(phoneNumElem.value);
 
-  result.then((guardRegister) => {
-    if (!guardRegister) {
-      Swal.fire({
-        title: "Not registered!",
-        text: "Make sure to register yourself before proceeding",
-        icon: "warning",
-        confirmButtonText: "Register"
-      }).then ((result) => {
-        if (result.isConfirmed) {
-          window.location.href= "registeration.html"
-        }
-      });
-    } else {
-      //if registered then takes the token (phoneNum) and saves in the local storage
-      localStorage.setItem("token", phoneNumElem.value);
-
-      //! Add guard dashboard link
-      window.location.href = "guard_dashboard.html";
-    }
-  });
+  if (!guardRegister) {
+    Swal.fire({
+      title: "Not registered!",
+      text: "Make sure to register yourself before proceeding",
+      icon: "warning",
+      confirmButtonText: "Register"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = "registeration.html";
+      }
+    });
+  } else {
+    localStorage.setItem("token", phoneNumElem.value);
+    window.location.href = "guard_dashboard.html";
+  }
 });
-let arr; //this is the array of strings
 
+let arr = [];
 const timeDelay = 120;
 const factor = 5;
-
 const txtArea = document.querySelector(".typed-text");
 
 function deleteLetters(value) {
   let index = value.length;
-
   const endId = setInterval(() => {
     let newTxt = value.substr(0, index);
     index--;
 
     txtArea.innerHTML = newTxt;
 
-    if (index == -1) {
+    if (index === -1) {
       clearInterval(endId);
-
       randomIdgenerator();
     }
   }, timeDelay);
 }
 
 function addLetters(i) {
-  const value = arr[i];
-  console.log(arr);
-  if (arr.length == 0) {
-    console.log("END");
-
-    setTimeout(newLetters, timeDelay * factor);
-
+  if (!arr || arr.length === 0) {
+    console.log("No more words to display!");
     return;
   }
 
+  const value = arr[i];
   arr.splice(i, 1);
 
   let index = 0;
-
   const startId = setInterval(() => {
     let newTxt = value.substr(0, index + 1);
     index++;
 
     txtArea.innerHTML = newTxt;
 
-    if (index == value.length) {
+    if (index === value.length) {
       clearInterval(startId);
-
-      setTimeout(() => {
-        deleteLetters(value);
-      }, timeDelay * factor);
+      setTimeout(() => deleteLetters(value), timeDelay * factor);
     }
   }, timeDelay);
 }
 
 function randomIdgenerator() {
-  const i = Math.floor(Math.random() * arr.length);
+  if (!arr || arr.length === 0) {
+    console.log("No more words to generate!");
+    return;
+  }
 
-  setTimeout(() => {
-    addLetters(i);
-  }, timeDelay * factor);
+  const i = Math.floor(Math.random() * arr.length);
+  setTimeout(() => addLetters(i), timeDelay * factor);
 }
 
 async function newLetters() {
-  let randomTextCollection = await fetch("extraTxt.txt");
+  try {
+    let response = await fetch("extraTxt.txt");
 
-  randomTextCollection = await randomTextCollection.text();
+    if (!response.ok) {
+      throw new Error("Failed to fetch extraTxt.txt");
+    }
 
-  arr = await randomTextCollection.split("\n");
+    let randomTextCollection = await response.text();
+    arr = randomTextCollection.split("\n").filter(text => text.trim().length > 0);
 
-  randomIdgenerator();
+    randomIdgenerator();
+  } catch (error) {
+    console.error("Error fetching extraTxt.txt:", error);
+  }
 }
 
 newLetters();

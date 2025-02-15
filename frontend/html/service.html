@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Navbar Link Hover Effect */
+        
+       
+
+        /* Card Hover Effect */
+        .card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Padding adjustment to avoid content hidden under the fixed navbar */
+        .content {
+            padding-top: 70px; /* Adjust according to the height of your navbar */
+        }
+
+        /* Ensuring card icons are centered */
+        .card-body i {
+            font-size: 3rem;
+            color: #28a745; /* New color for icons */
+        }
+        
+        .card-footer i {
+            font-size: 1.5rem;
+            color: #28a745; /* New color for icons */
+            transition: transform 0.3s ease;
+        }
+
+        .card-footer i:hover {
+            transform: translateY(5px);
+        }
+
+        /* Ensuring responsiveness for smaller screens */
+        @media (max-width: 576px) {
+            .card-body i {
+                font-size: 2.5rem;
+            }
+            .card-title {
+                font-size: 1.2rem;
+            }
+            .card-text {
+                font-size: 0.9rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Security Guard</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav "style="margin-left:37%;"> <!-- Centers LOGIN & REGISTER -->
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-warning me-2" href="#">LOGIN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success me-4" href="#">REGISTER</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto"> <!-- Aligns menu items to right -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about6.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="content">
+        <div class="bg-light">
+            <div class="container py-5">
+                <div class="text-center mb-5" style="margin-top: 6%;">
+                    <h1 class="display-5 fw-bold">Our Services</h1>
+                    <p class="text-muted">We offer advanced security solutions tailored to meet your needs, with cutting-edge technology and services designed for optimal efficiency and safety.</p>
+                </div>
+                <div class="row g-4">
+                    <!-- Security Guard Database -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fas fa-database"></i> <!-- Database icon -->
+                                </div>
+                                <h5 class="card-title">Security Guard Database</h5>
+                                <p class="card-text text-muted">A centralized database to manage and track security guard profiles, certifications, and histories efficiently.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Guard Location Tracking -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fas fa-map-marker-alt"></i> <!-- Location icon -->
+                                </div>
+                                <h5 class="card-title">Live Guard Location Tracking</h5>
+                                <p class="card-text text-muted">Track the live location of security guards in real-time to ensure optimal security coverage and quick response times.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duty Assignment & Rotation System -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fas fa-sync-alt"></i> <!-- Rotation icon -->
+                                </div>
+                                <h5 class="card-title">Duty Assignment & Rotation System</h5>
+                                <p class="card-text text-muted">A system designed to optimize duty assignments and rotation schedules to maintain maximum security coverage at all times.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shift & Attendance Monitoring -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fas fa-clock"></i> <!-- Clock icon -->
+                                </div>
+                                <h5 class="card-title">Shift & Attendance Monitoring</h5>
+                                <p class="card-text text-muted">Monitor shifts and attendance to ensure accurate tracking of working hours and prevent any security gaps.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guard Performance & Feedback System -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fas fa-chart-line"></i> <!-- Performance icon -->
+                                </div>
+                                <h5 class="card-title">Guard Performance & Feedback System</h5>
+                                <p class="card-text text-muted">Track guard performance and gather feedback to improve the quality of service and maintain high standards of security.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Custom Security System Integration -->
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 text-center">
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <i class="fas fa-plug"></i> <!-- Integration icon -->
+                                </div>
+                                <h5 class="card-title">Custom Security System Integration</h5>
+                                <p class="card-text text-muted">We offer tailored integration of security technologies and systems to create a cohesive security infrastructure for your needs.</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
