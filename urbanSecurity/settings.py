@@ -41,8 +41,6 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_simplejwt',
     'guard'
-
-
 ]
 
 MIDDLEWARE = [
@@ -82,7 +80,7 @@ WSGI_APPLICATION = 'urbanSecurity.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'security',
+        'NAME': 'anothersecurity',
         'USER': 'root',
         'PASSWORD': 'SAnt52$$king',
         'HOST': 'localhost',
@@ -134,5 +132,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
     )
+
         }

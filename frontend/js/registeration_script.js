@@ -41,7 +41,7 @@ async function encryptPassword(password) {
 async function isGuardRegistered(phoneNum) {
   try {
     //! Put url of backend here
-    const response = await fetch(`/users?phoneNum=${phoneNum}`);
+    const response = await fetch(`http://localhost:8080/guards/${phoneNum}`);
 
     const data = await response.json();
 
@@ -86,7 +86,7 @@ registerBtn.addEventListener("click", (e) => {
       return;
     } else if (!guardRegister) {
       //checks if both passwords are equal
-      if (passwordElem.value == confirm_passwordElem.value) {
+      if (passwordElem.value === confirm_passwordElem.value) {
         console.log("Succesfully registered!");
         encryptPassword(confirm_passwordElem.value).then((response) => {
           newGuard.password = response; //this updates the password with encrypted password
@@ -108,7 +108,7 @@ registerBtn.addEventListener("click", (e) => {
   async function sendData() {
     try {
       //! Put url of backend here
-      await fetch("", {
+      await fetch("http://localhost:8000/guards/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
